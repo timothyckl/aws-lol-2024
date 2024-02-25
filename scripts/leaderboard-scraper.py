@@ -1,8 +1,10 @@
 import os
+import re
 from time import sleep
 import pandas as pd
 import markdown
 from datetime import date
+from collections import Counter
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
@@ -48,16 +50,30 @@ for row in tr:
 
 df = pd.DataFrame(rankings, columns=col_names).drop('Model ID', axis=1)
 
+trainer_list = df['Trainer Alias'].to_list()
+
+pattern = r'^.*?\d+'
+trainer_list = [re.match(pattern, t).group(0) for t in trainer_list if re.match(pattern, t)] 
+
+team_counts = Counter(trainer_list)
+unique_teams = list(dict.fromkeys(team_counts))
+sorted_unique_teams = sorted(unique_teams, key=lambda x: (trainer_list.index(x), -team_counts[x]))
+top_six_unique_teams = sorted_unique_teams[:6]
+
+#print(f"TOPX SIX: {top_six_unique_teams}")
+
 leaderboard_md = df.to_markdown(index=False)
 
-# print(type(leaderboard_md))
+#print(leaderboard_md)
 
 f = open('/home/tim/projects/aws-lol-2024/README.md', 'w')
 today = date.today().strftime("%B %d, %Y")
 
 updated = "Last updated: " + today
 
-doc = "# AWS LOL 2024\n\n# Leaderboard\n\n" + updated + "\n\n" + leaderboard_md
+doc = "# AWS LOL 2024\n\n# Leaderboard\n\n" + updated + "\n\nTop 6 Teams: `[" + ', '.join(top_six_unique_teams) + "]`\n\n" + leaderboard_md
+
+print(doc)
 
 # overwrite old file
 f.write(doc)
