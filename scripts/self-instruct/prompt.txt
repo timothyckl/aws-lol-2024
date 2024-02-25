@@ -9,7 +9,7 @@ Here are the requirements:
 4. The questions should be 1 to 2 sentences long. Either an imperative sentence or a question is permitted.
 5. You should generate an appropriate topic related to the question. The topic should provide substantial content to make the question challenging but should ideally not exceed 100 words.
 6. The output should be an appropriate response to the question and information provided. Make sure the output is less than 100 words.
-7. Questions should be in the following jsonl format: {"id": "seed_task_<insert number here>", "instruction": "<insert question here>", "info": [{"difficulty": "<insert difficulty here>", "topic": "<insert topic name here>"}], "output": "<insert response here>"}. Each question should begin at a brand new line.
+7. Questions should be in the following jsonl format: {{"id": "seed_task_<insert number here>", "instruction": "<insert question here>", "info": [{{"difficulty": "<insert difficulty here>", "topic": "<insert topic name here>"}}], "output": "<insert response here>"}}. Each question should begin at a brand new line.
 
 List of {num_questions} questions:
 
