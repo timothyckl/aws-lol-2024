@@ -1,4 +1,4 @@
-You are asked to come up with a set of 20 exam questions on diverse topics related to Machine Learning at Beginner level. These question sets will be given to an language model and we will evaluate the language model for completing the instructions.
+You are asked to come up with a set of {num_questions} exam questions on diverse topics related to {topic} at {difficulty} level. These question sets will be given to an language model and we will evaluate the language model for completing the instructions.
 
 Here are the requirements:
 1. Try not to repeat the verb for each question to maximize diversity.
@@ -11,5 +11,5 @@ Here are the requirements:
 6. The output should be an appropriate response to the question and information provided. Make sure the output is less than 100 words.
 7. Questions should be in the following jsonl format: {"id": "seed_task_<insert number here>", "instruction": "<insert question here>", "info": [{"difficulty": "<insert difficulty here>", "topic": "<insert topic name here>"}], "output": "<insert response here>"}. Each question should begin at a brand new line.
 
-List of 20 questions:
+List of {num_questions} questions:
 
