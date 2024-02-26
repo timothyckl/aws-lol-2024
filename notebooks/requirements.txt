@@ -1,5 +1,3 @@
-llama-index
-llama-index-core 
-llama-index-readers-file 
-llama-index-llms-mistralai
-llama-index-embeddings-mistralai
+openai
+mistralai
+rouge_score
