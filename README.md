@@ -8,7 +8,7 @@ Top 6 Teams: `[Team46, Team0, Team51, team45, Team50, t45]`
 
 |   Rank | Trainer Alias               | Best Win Rate   | Gap to First   | Last Submitted Win Rate   |   No. of Wins |   No. of Draws |   No. of Total Runs |
 |-------:|:----------------------------|:----------------|:---------------|:--------------------------|--------------:|---------------:|--------------------:|
-|      1 | Team46-puolsky-KristonKeoni | 77%             | 0%             | 68%                       |            33 |              0 |                  48 |
+|      1 | Team46-puolsky-KristonKeoni | 77%             | 0%             | 62%                       |            30 |              0 |                  48 |
 |      2 | Team0-Vincent               | 72%             | 5%             | 66%                       |            32 |              0 |                  48 |
 |      3 | Team51                      | 72%             | 5%             | 72%                       |            35 |              0 |                  48 |
 |      4 | team45-mong                 | 72%             | 5%             | 66%                       |            32 |              0 |                  48 |
@@ -21,10 +21,10 @@ Top 6 Teams: `[Team46, Team0, Team51, team45, Team50, t45]`
 |     11 | Team35_Holden               | 70%             | 7%             | 66%                       |            32 |              0 |                  48 |
 |     12 | TM-40-Junwei                | 70%             | 7%             | 70%                       |            34 |              0 |                  48 |
 |     13 | Team34-Mikhail              | 70%             | 7%             | 70%                       |            34 |              0 |                  48 |
-|     14 | Team18-CogniSync            | 70%             | 7%             | 66%                       |            32 |              0 |                  48 |
-|     15 | Team0-ZhiHao                | 68%             | 9%             | 68%                       |            33 |              0 |                  48 |
-|     16 | Team47-ZayYarTun            | 68%             | 9%             | 68%                       |            33 |              0 |                  48 |
-|     17 | T39_Jacob                   | 68%             | 9%             | 64%                       |            31 |              0 |                  48 |
-|     18 | Team35-Donovan              | 68%             | 9%             | 68%                       |            33 |              0 |                  48 |
-|     19 | Team43LiHan                 | 68%             | 9%             | 68%                       |            33 |              0 |                  48 |
-|     20 | Team16-ByteChef             | 66%             | 11%            | 64%                       |            31 |              0 |                  48 |
+|     14 | team45-yh                   | 70%             | 7%             | 70%                       |            34 |              0 |                  48 |
+|     15 | Team18-CogniSync            | 70%             | 7%             | 66%                       |            32 |              0 |                  48 |
+|     16 | Team1-Damien                | 70%             | 7%             | 70%                       |            34 |              0 |                  48 |
+|     17 | Team0-ZhiHao                | 68%             | 9%             | 68%                       |            33 |              0 |                  48 |
+|     18 | Team26-Kyra                 | 68%             | 9%             | 68%                       |            33 |              0 |                  48 |
+|     19 | Team47-ZayYarTun            | 68%             | 9%             | 68%                       |            33 |              0 |                  48 |
+|     20 | T39_Jacob                   | 68%             | 9%             | 64%                       |            31 |              0 |                  48 |
