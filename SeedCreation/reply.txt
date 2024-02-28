@@ -1,0 +1,199 @@
+What is the fundamental goal of machine learning? Topic: Goal of Machine Learning; Difficulty: 1
+
+Explain the concept of overfitting in machine learning. Topic: Overfitting; Difficulty: 2
+
+Can you distinguish between bias and variance in the context of machine learning? Topic: Bias and variance; Difficulty: 2
+
+What is the role of a loss function in machine learning? Topic: Loss Function; Difficulty: 3
+
+Explain the concept of gradient descent. Topic: Gradient Descent; Difficulty: 2
+
+How does regularization help prevent overfitting in machine learning models? Topic: Regularization; Difficulty: 2
+
+What is the difference between classification and regression in machine learning? Topic: Classification vs. Regression; Difficulty: 1
+
+What is a decision tree, and how does it work in machine learning? Topic: Decision Trees; Difficulty: 2
+
+Explain the concept of cross-validation in machine learning. Topic: Cross-validation; Difficulty: 2
+
+What is ensemble learning, and how does it improve model performance? Topic: Ensemble Learning; Difficulty: 2
+
+How does the bias-variance tradeoff impact model performance? Topic: Bias-Variance Tradeoff; Difficulty: 2
+
+What is feature engineering, and why is it important in machine learning? Topic: Feature Engineering; Difficulty: 1
+
+Explain the concept of transfer learning in machine learning. Topic: Transfer Learning; Difficulty: 2
+
+What is the difference between stochastic gradient descent and batch gradient descent? Topic: SGD vs. Batch GD; Difficulty: 2
+
+How do neural networks simulate the human brain in machine learning? Topic: Neural Networks; Difficulty: 2
+
+What is a hyperparameter in machine learning? Topic: Hyperparameters; Difficulty: 1
+
+Explain the concept of kernel functions in support vector machines (SVM). Topic: Kernel Functions in SVM; Difficulty: 2
+
+What is the purpose of activation functions in neural networks? Topic: Activation Functions; Difficulty: 2
+
+How is the K-Nearest Neighbors (KNN) algorithm used for classification? Topic: K-Nearest Neighbors (KNN); Difficulty: 2
+
+What is the curse of dimensionality in machine learning? Topic: Curse of Dimensionality; Difficulty: 2
+
+Explain the concept of bagging in ensemble learning. Topic: Bagging; Difficulty: 2
+
+How does the Random Forest algorithm improve upon a single decision tree? Topic: Random Forest; Difficulty: 2
+
+What is the role of activation functions in neural networks? Topic: Activation Functions; Difficulty: 2
+
+How do you handle missing data in a machine learning dataset? Topic: Handling Missing Data; Difficulty: 2
+
+Explain the concept of bias in machine learning algorithms. Topic: Bias in ML Algorithms; Difficulty: 2
+
+What is the purpose of a confusion matrix in evaluating the performance of a classification model? Topic: Confusion Matrix; Difficulty: 2
+
+How does batch normalization improve the training of deep neural networks? Topic: Batch Normalization; Difficulty: 2
+
+Explain the concept of precision and recall in the context of classification models. Topic: Precision and Recall; Difficulty: 2
+
+What is the purpose of a learning rate in gradient descent? Topic: Learning Rate in Gradient Descent; Difficulty: 2
+
+How does the ROC curve help in evaluating the performance of a classification model? Topic: ROC Curve; Difficulty: 2
+
+What is the difference between unsupervised learning and semi-supervised learning? Topic: Unsupervised vs. Semi-supervised Learning; Difficulty: 2
+
+Explain the concept of cross-entropy loss in machine learning. Topic: Cross-entropy Loss; Difficulty: 2
+
+What are hyperparameters tuning and grid search in machine learning? Topic: Hyperparameter Tuning and Grid Search; Difficulty: 2
+
+How does the concept of sparsity relate to machine learning? Topic: Sparsity in ML; Difficulty: 2
+
+What is the role of regularization in linear regression? Topic: Regularization in Linear Regression; Difficulty: 2
+
+Explain the terms precision, recall, and F1 score and their significance in classification evaluation. Topic: Precision, Recall, F1 Score; Difficulty: 2
+
+What is the curse of dimensionality, and how does it affect machine learning algorithms? Topic: Curse of Dimensionality; Difficulty: 2
+
+How does transfer learning benefit deep neural networks? Topic: Transfer Learning; Difficulty: 2
+
+What are the advantages and disadvantages of using decision trees in machine learning? Topic: Decision Trees Advantages and Disadvantages; Difficulty: 2
+
+Can you explain the concept of kernel trick in support vector machines (SVM)? Topic: Kernel Trick in SVM; Difficulty: 3
+
+How does the k-fold cross-validation technique work, and why is it useful? Topic: k-fold Cross-Validation; Difficulty: 2
+
+Explain the bias-variance tradeoff in the context of model complexity. Topic: Bias-Variance Tradeoff; Difficulty: 2
+
+What is the difference between batch gradient descent and stochastic gradient descent? Topic: Batch GD vs. SGD; Difficulty: 2
+
+How does Principal Component Analysis (PCA) contribute to dimensionality reduction in machine learning? Topic: PCA for Dimensionality Reduction; Difficulty: 2
+
+What is the role of activation functions in deep neural networks? Topic: Activation Functions in DNNs; Difficulty: 2
+
+How do recurrent neural networks (RNNs) differ from feedforward neural networks? Topic: RNNs vs. Feedforward NNs; Difficulty: 2
+
+What is the purpose of dropout in neural networks? Topic: Dropout in NNs; Difficulty: 2
+
+Explain the concept of batch normalization in deep learning. Topic: Batch Normalization; Difficulty: 2
+
+How does the Rocchio algorithm work in text classification? Topic: Rocchio Algorithm in Text Classification; Difficulty: 3
+
+What are the advantages and disadvantages of using support vector machines (SVMs)? Topic: SVM Advantages and Disadvantages; Difficulty: 2
+
+What is the purpose of the learning rate in gradient descent, and how do you choose an appropriate value? Topic: Learning Rate in Gradient Descent; Difficulty: 2
+
+Explain the terms underfitting and overfitting in the context of machine learning models. Topic: Underfitting and Overfitting; Difficulty: 2
+
+What is the significance of the term "feature scaling" in machine learning, and what are common methods for scaling? Topic: Feature Scaling; Difficulty: 2
+
+How does the concept of imbalanced classes affect machine learning models, and what strategies can be employed to address this issue? Topic: Imbalanced Classes; Difficulty: 2
+
+What is the role of a confusion matrix in the context of binary classification, and how is accuracy calculated? Topic: Confusion Matrix and Accuracy; Difficulty: 2
+
+How does the K-Means clustering algorithm work, and what are its limitations? Topic: K-Means Clustering; Difficulty: 2
+
+Explain the term "feature importance" in the context of machine learning models. Topic: Feature Importance; Difficulty: 2
+
+What is the difference between bagging and boosting in ensemble learning? Topic: Bagging vs. Boosting; Difficulty: 2
+
+How does the concept of one-hot encoding address categorical variables in machine learning? Topic: One-Hot Encoding; Difficulty: 2
+
+What is the purpose of a ROC curve, and how does it relate to the area under the curve (AUC)? Topic: ROC Curve and AUC; Difficulty: 2
+
+Explain the concept of bias in machine learning algorithms. Topic: Bias in ML Algorithms; Difficulty: 2
+
+How does feature selection contribute to improving machine learning models? Topic: Feature Selection; Difficulty: 2
+
+What is the purpose of the Adam optimization algorithm in machine learning? Topic: Adam Optimization Algorithm; Difficulty: 2
+
+Explain the concept of dropout regularization in neural networks. Topic: Dropout Regularization; Difficulty: 2
+
+How does the concept of cross-entropy loss differ between binary and multi-class classification problems? Topic: Cross-Entropy Loss in Binary vs. Multi-class Classification; Difficulty: 2
+
+What are the advantages and disadvantages of using deep learning models? Topic: Advantages and Disadvantages of Deep Learning; Difficulty: 2
+
+How do you handle time-series data in machine learning, and what challenges are associated with it? Topic: Handling Time-Series Data; Difficulty: 2
+
+What is the difference between precision and recall, and when might you prioritize one over the other? Topic: Precision vs. Recall; Difficulty: 2
+
+How does the concept of stratified sampling contribute to creating representative training and testing datasets? Topic: Stratified Sampling; Difficulty: 2
+
+What is the role of activation functions in the hidden layers of neural networks? Topic: Activation Functions in Hidden Layers; Difficulty: 2
+
+How does the concept of L1 and L2 regularization differ in machine learning? Topic: L1 and L2 Regularization; Difficulty: 2
+
+Explain the concept of feature extraction in machine learning. Topic: Feature Extraction; Difficulty: 2
+
+What is the purpose of the term "dropout" in convolutional neural networks (CNNs)? Topic: Dropout in CNNs; Difficulty: 2
+
+How does the concept of word embeddings contribute to natural language processing (NLP)? Topic: Word Embeddings in NLP; Difficulty: 2
+
+Explain the concept of transfer learning in the context of image classification. Topic: Transfer Learning in Image Classification; Difficulty: 2
+
+What are the challenges associated with handling missing data in machine learning, and how can they be addressed? Topic: Handling Missing Data Challenges and Solutions; Difficulty: 2
+
+How does the concept of self-supervised learning differ from supervised learning in machine learning? Topic: Self-supervised Learning vs. Supervised Learning; Difficulty: 2
+
+What is the role of activation functions in the output layer of a neural network for binary classification tasks? Topic: Activation Functions in Output Layer for Binary Classification; Difficulty: 2
+
+Explain the concept of precision-recall tradeoff in machine learning. Topic: Precision-Recall Tradeoff; Difficulty: 2
+
+How does the Naive Bayes algorithm work in text classification tasks? Topic: Naive Bayes in Text Classification; Difficulty: 2
+
+What is the purpose of the term "bag-of-words" in natural language processing? Topic: Bag-of-Words; Difficulty: 2
+
+Explain the concept of model interpretability in machine learning. Topic: Model Interpretability; Difficulty: 2
+
+How does the concept of class imbalance affect the performance of machine learning models, and what strategies can be employed to address it? Topic: Class Imbalance and Strategies; Difficulty: 2
+
+What is the role of the term "kernel" in support vector machines (SVMs)? Topic: Kernel in SVMs; Difficulty: 2
+
+Explain the concept of imputation in the context of handling missing data. Topic: Imputation for Missing Data; Difficulty: 2
+
+How do autoencoders contribute to unsupervised learning in neural networks? Topic: Autoencoders in Unsupervised Learning; Difficulty: 2
+
+What is the role of the term "word frequency" in natural language processing? Topic: Word Frequency in NLP; Difficulty: 2
+
+Explain the concept of cross-validation in machine learning, and why is it important? Topic: Cross-validation; Difficulty: 2
+
+How does the concept of early stopping contribute to training neural networks? Topic: Early Stopping in Neural Networks; Difficulty: 2
+
+What is the purpose of the term "activation function" in a neural network? Topic: Activation Function in Neural Networks; Difficulty: 2
+
+What is machine learning? Topic: Introduction to Machine Learning; Difficulty: 1
+
+What are the main types of machine learning? Topic: Types of Machine Learning; Difficulty: 2
+
+Can you explain the difference between a feature and a label in machine learning? Topic: Feature and Label in ML; Difficulty: 1
+
+What is the training and testing process in machine learning? Topic: Training and Testing in ML; Difficulty: 1
+
+How does overfitting occur in machine learning, and what are some methods to prevent it? Topic: Overfitting in ML; Difficulty: 2
+
+What is the purpose of the loss function in machine learning? Topic: Purpose of Loss Function in ML; Difficulty: 2
+
+What is the role of a hyperparameter in machine learning models? Topic: Hyperparameters in ML; Difficulty: 2
+
+Explain the concept of a decision tree in machine learning. Topic: Decision Trees in ML; Difficulty: 2
+
+How does a confusion matrix contribute to evaluating the performance of a classification model? Topic: Confusion Matrix in ML; Difficulty: 2
+
+What is the difference between regression and classification in machine learning? Topic: Regression vs. Classification in ML; Difficulty: 1
