@@ -3,18 +3,17 @@ import json
 import logging
 import math
 import os
-import pprint
 import re
 import sys
+
 from functools import partial
 from multiprocessing import Pool
 from random import sample
 from string import punctuation
 from time import sleep, time
-from typing import Optional, Sequence, Union
+from typing import Sequence, Union
 
 import numpy as np
-from mistralai.client import MistralClient
 from openai import OpenAI, OpenAIError
 from rouge_score import rouge_scorer
 from tqdm import tqdm
@@ -49,8 +48,6 @@ class SelfInstruct:
         """
         if model_provider == "openai":
             self.client = OpenAI(api_key=api_key)
-        elif model_provider == "mistral":
-            self.client = MistralClient(api_key=api_key, model=model_name)
         else:
             raise NotImplementedError(
                 f"Model provider {model_provider} not implemented."
@@ -82,11 +79,11 @@ class SelfInstruct:
         prompt = self.prompt_template + "\n"
 
         for idx, task_dict in enumerate(prompt_instructions):
-            (instruction, output) = task_dict["instruction"], task_dict["output"]
+            (instruction, output) = task_dict["instruction"], task_dict["response"]
             instruction = re.sub(r"\s+", " ", instruction).strip().rstrip(":")
             prompt += f"###\n"
             prompt += f"{idx + 1}. Instruction: {instruction}\n"
-            prompt += f"{idx + 1}. Output: {output}\n"
+            prompt += f"{idx + 1}. Response: {output}\n"
 
         prompt += f"###\n"
         prompt += f"{idx + 2}. Instruction:"
@@ -114,10 +111,14 @@ class SelfInstruct:
 
         completions = []
 
+        # print(prompt_batches)
+        # raise Exception("stop")
+        
         for batch_id, prompt_batch in tqdm(
             enumerate(prompt_batches),
             desc="prompt_batches",
             total=len(prompt_batches),
+            position=0, leave=True
         ):
             batch_decoding_args = decoding_args
 
@@ -131,8 +132,14 @@ class SelfInstruct:
                     )
                     choices = completion_batch.choices
 
-                    for choice in choices:
-                        choice["total_tokens"] = completion_batch.usage.total_tokens
+                    # print()
+                    # print(completion_batch.__dict__.keys())
+                    # print()
+                    # print(completion_batch.__dict__)
+                    
+                    
+                    # for choice in choices:
+                    #     choice["total_tokens"] = completion_batch.usage.total_tokens
 
                     completions.extend(choices)
                     break
@@ -162,92 +169,104 @@ class SelfInstruct:
 
         return completions
 
-    def mistral_completion(
-        self,
-    ):
-        # mistral api does not support batched requests
-        pass
-
     def find_word_in_string(w, s):
         return re.compile(r"\b({0})\b".format(w), flags=re.IGNORECASE).search(s)
 
     def post_process_gpt3_response(self, num_prompt_instructions, response):
         if response is None:
             return []
-
+        
+        # print(response)
+        # raise Exception("Stop")
+        
         raw_instructions = (
-            f"{num_prompt_instructions+1}. Instruction:" + response["text"]
+            f"{num_prompt_instructions+1}. Instruction:" + response.text
         )
+        
         raw_instructions = re.split("###", raw_instructions)
         instructions = []
 
+        # print("response inside post-process function:\n", raw_instructions)
+        # raise Exception("Stop")
+        
         for idx, inst in enumerate(raw_instructions):
-            # if the decoding stops due to length, the last example is likely truncated so we discard it
+            # if the decoding stops due to length, the last example is likely truncated so we discard it            
             if (
                 idx == len(raw_instructions) - 1
-                and response["finish_reason"] == "length"
+                and response.finish_reason == "length"
             ):
                 continue
-
+            
             idx += num_prompt_instructions + 1
-            splitted_data = re.split(f"{idx}\.\s+(Instruction|Input|Output):", inst)
+            splitted_data = re.split(f"{idx}\.\s+(Instruction|Response):", inst)
 
-            if len(splitted_data) != 7:
+            # print("splitted_data info:\n", splitted_data, len(splitted_data))
+            # print()
+            # raise Exception("stopp!!!")
+            
+            if len(splitted_data) != 5:
                 continue
             else:
                 inst = splitted_data[2].strip()
-                input = splitted_data[4].strip()
-                input = "" if input.lower() == "<noinput>" else input
-                output = splitted_data[6].strip()
+                output = splitted_data[4].strip()
 
+            # print("bye?\n")
+            
             # filter out too short or too long instructions
-            if len(inst.split()) <= 3 or len(inst.split()) > 150:
+            # print(len(inst.split()) <= 3, inst)
+            if len(inst.split()) <= 3: #or len(inst.split()) > 150:
                 continue
 
-            # filter based on keywords that are not suitable for language models.
-            blacklist = [
-                "image",
-                "images",
-                "graph",
-                "graphs",
-                "picture",
-                "pictures",
-                "file",
-                "files",
-                "map",
-                "maps",
-                "draw",
-                "plot",
-                "go to",
-                "video",
-                "audio",
-                "music",
-                "flowchart",
-                "diagram",
-            ]
+            # print("hello?\n")
+            
+            # # filter based on keywords that are not suitable for language models.
+            # blacklist = [
+            #     "image",
+            #     "images",
+            #     "graph",
+            #     "graphs",
+            #     "picture",
+            #     "pictures",
+            #     "file",
+            #     "files",
+            #     "map",
+            #     "maps",
+            #     "draw",
+            #     "plot",
+            #     "go to",
+            #     "video",
+            #     "audio",
+            #     "music",
+            #     "flowchart",
+            #     "diagram",
+            # ]
 
-            blacklist += []
+            # blacklist += []
 
-            if any(self.find_word_in_string(word, inst) for word in blacklist):
-                continue
+            # if any(self.find_word_in_string(word, inst) for word in blacklist):
+            #     continue
 
             # We found that the model tends to add "write a program" to some existing instructions, which lead to a lot of such instructions.
             # And it's a bit comfusing whether the model need to write a program or directly output the result.
             # Here we filter them out.
             # Note this is not a comprehensive filtering for all programming instructions.
+            
+            # print("inst.startswith(\"Write a program\")", inst.startswith("Write a program"))
             if inst.startswith("Write a program"):
                 continue
 
             # filter those starting with punctuation
+            # print("inst[0] in punctuation", inst[0] in punctuation)
             if inst[0] in punctuation:
                 continue
 
             # filter those starting with non-english character
+            # print("not inst[0].isascii()", not inst[0].isascii())
             if not inst[0].isascii():
                 continue
 
-            instructions.append({"instruction": inst, "input": input, "output": output})
-
+            instructions.append({"instruction": inst, "context": "", "response": output})
+        
         return instructions
 
     def generate(self, output_dir="./"):
@@ -263,15 +282,15 @@ class SelfInstruct:
 
         seed_tasks = [json.loads(l) for l in open(self.seed_tasks_path, "r")]
         seed_instruction_data = [
-            {"instruction": t["instruction"], "output": t["output"]} for t in seed_tasks
+            {"instruction": t["instruction"], "response": t["response"]} for t in seed_tasks
         ]
 
-        print(f"Loaded {len(seed_instruction_data)} human-written seed instructions")
+        print(f"Loaded {len(seed_instruction_data)} seed instructions")
 
         os.makedirs(output_dir, exist_ok=True)
         request_idx = 0
 
-        # load the LM-generated instructions (first run shouldn't trigger this)
+        # load the LM-generated instructions (first run shouldn't trigger this) -tim
         machine_instruction_data = []
 
         if os.path.exists(os.path.join(output_dir, "regen.json")):
@@ -298,7 +317,7 @@ class SelfInstruct:
         all_instruction_tokens = [
             scorer._tokenizer.tokenize(inst) for inst in all_instructions
         ]
-
+        
         while len(machine_instruction_data) < self.num_instructions_to_generate:
             request_idx += 1
             batch_inputs = []
@@ -312,6 +331,11 @@ class SelfInstruct:
 
                 batch_inputs.append(prompt)
 
+            # for inp in batch_inputs:
+            #     print(inp)
+            #     print("====================================")
+            # raise Exception("stopp")
+
             request_start = time()
 
             if self.model_provider == "openai":
@@ -320,7 +344,7 @@ class SelfInstruct:
                     "n": 1,
                     "max_tokens": 3072,
                     "top_p": 1.0,
-                    # "stop": ["\n20", "20.", "20."],
+                    "stop": [f"\n{self.num_instructions_to_generate}", f"{self.num_instructions_to_generate}."],
                 }
 
                 results = self.openai_completion(
@@ -334,6 +358,8 @@ class SelfInstruct:
                 instruction_data = []
 
                 for result in results:
+                    # print(result)
+                    # raise Exception("stop")
                     new_instructions = self.post_process_gpt3_response(
                         self.num_prompt_instructions, result
                     )
@@ -341,6 +367,9 @@ class SelfInstruct:
 
                 total = len(instruction_data)
                 keep = 0
+
+                # print(instruction_data)
+                # raise Exception("stopperrrr")
 
                 for instruction_data_entry in instruction_data:
                     # computing similarity with the pre-tokenzied instructions
@@ -385,19 +414,31 @@ class SelfInstruct:
                 )
                 print(f"Generated {total} instructions, kept {keep} instructions")
 
+                # print(len(machine_instruction_data), machine_instruction_data)
+                print()
+
                 self.jdump(
                     machine_instruction_data, os.path.join(output_dir, "regen.json")
                 )
 
-            elif self.model_provider == "mistral":
-                raise NotImplementedError("Mistral model provider not implemented yet")
+
             else:
                 raise NotImplementedError(
                     f"Model provider {self.model_provider} not implemented"
                 )
+        else:
+            print("\nGeneration complete!")
 
     def _make_r_io_base(self, f, mode: str):
         if not isinstance(f, io.IOBase):
+            f = open(f, mode=mode)
+        return f
+        
+    def _make_w_io_base(self, f, mode: str):
+        if not isinstance(f, io.IOBase):
+            f_dirname = os.path.dirname(f)
+            if f_dirname != "":
+                os.makedirs(f_dirname, exist_ok=True)
             f = open(f, mode=mode)
         return f
 

@@ -3,13 +3,12 @@ You are asked to come up with a set of {num_questions} exam questions on diverse
 Here are the requirements:
 1. Try not to repeat the verb for each question to maximize diversity.
 2. The language used for the questions also should be diverse. For example, you should combine questions with imperative instructions.
-3. The topics in these questions should be diverse. The list should include diverse types of questions like open-ended generation, multiple-choice, true/false etc.
-2. A language model should be able to complete the instruction. For example, do not ask the assistant to create any visual or audio output. For another example, do not ask the assistant to wake you up at 5pm or set a reminder because it cannot perform any action.
-3. The questions should be in English.
-4. The questions should be 1 to 2 sentences long. Either an imperative sentence or a question is permitted.
-5. You should generate an appropriate topic related to the question. The topic should provide substantial content to make the question challenging but should ideally not exceed 100 words.
-6. The output should be an appropriate response to the question and information provided. Make sure the output is less than 100 words.
-7. Questions should be in the following jsonl format: {{"id": "seed_task_<insert number here>", "instruction": "<insert question here>", "info": [{{"difficulty": "<insert difficulty here>", "topic": "<insert topic name here>"}}], "output": "<insert response here>"}}. Each question should begin at a brand new line.
+3. The topics in these questions should be diverse. The question type should include only open-ended generation.
+4. A language model should be able to complete the instruction. For example, do not ask the assistant to create any visual or audio output. For another example, do not ask the assistant to wake you up at 5pm or set a reminder because it cannot perform any action.
+5. The questions should be in English.
+6. The questions should be 1 to 2 sentences long. Either an imperative sentence or a question is permitted.
+7. You should generate an appropriate topic related to the question. The topic should provide substantial content to make the question challenging but should ideally not exceed 100 words.
+8. The response should be an appropriate response to the question and information provided. Make sure the response is concise.
+9. Responses should be answered with depth, accuracy, and completeness.
 
-List of {num_questions} questions:
-
+List of questions:
