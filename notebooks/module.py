@@ -388,7 +388,7 @@ class SelfInstruct:
                         for i in np.argsort(rouge_scores)[-10:][::-1]
                     }
 
-                    if max(rouge_scores) > 0.7:
+                    if max(rouge_scores) >= 0.7:
                         continue
                     else:
                         keep += 1
