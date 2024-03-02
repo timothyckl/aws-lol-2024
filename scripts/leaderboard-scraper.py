@@ -18,7 +18,7 @@ options.profile = webdriver.FirefoxProfile(os.path.expanduser('~/.mozilla/firefo
 driver = webdriver.Firefox(options=options)
 driver.get('https://d1lojwke7j5vfp.cloudfront.net/leaderboard')
 
-sleep(10)
+sleep(20)
 # leaderboard = driver.find_element(By.TAG_NAME, "table")
 
 html = driver.page_source
