@@ -321,20 +321,49 @@ class SelfInstruct:
         while len(machine_instruction_data) < self.num_instructions_to_generate:
             request_idx += 1
             batch_inputs = []
+            window_size = 3  # hardcoded sliding window size of 5 samples
+            step_size = 3 # hardcoded step size of 5 elements
+            
+            for i in range(self.request_batch_size):
+                # prompt_inst = sample(
+                #     seed_instruction_data, self.num_prompt_instructions
+                # )
+                # prompt = self.encode_prompt(prompt_inst)
+                # batch_inputs.append(prompt)
+            
+                start_index = i * step_size % len(seed_instruction_data)
+                end_index = (start_index + window_size) % len(seed_instruction_data)
+                prompt_inst = seed_instruction_data[start_index:end_index]
 
-            for _ in range(self.request_batch_size):
-                # only sampling from the seed tasks
-                prompt_instructions = sample(
-                    seed_instruction_data, self.num_prompt_instructions
-                )
-                prompt = self.encode_prompt(prompt_instructions)
+                if len(prompt_inst) < window_size:  # Wrap around when reaching end of list
+                    prompt_inst += seed_instruction_data[:window_size - len(prompt_inst)]
 
+                prompt = self.encode_prompt(prompt_inst)
+                
+                # if not isinstance(prompt, list):
+                #     raise Exception("prompt_inst not a list")
+                    
                 batch_inputs.append(prompt)
+            
+            # for i in range(0, len(seed_instruction_data), step_size):
+            #     window = seed_instruction_data[i:i+window_size]
+            #     if len(window) < window_size:  # wrap around when reaching end of list
+            #         window += seed_instruction_data[:window_size - len(window)]
+            #     prompt = self.encode_prompt(window)
+            #     batch_inputs.append(prompt)
+                # batch_inputs.append(window)
 
-            # for inp in batch_inputs:
-            #     print(inp)
-            #     print("====================================")
-            # raise Exception("stopp")
+            # print(len(batch_inputs))
+
+            # for batch in batch_inputs:
+            #     print(batch)
+            #     print("🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣")
+            #     for inp in batch:
+            #         print(f"intruction: {inp['instruction']}")
+                
+
+            # print(len(batch_inputs))
+            # raise Exception("stopppppp")
 
             request_start = time()
 
@@ -342,9 +371,9 @@ class SelfInstruct:
                 decoding_args = {
                     "temperature": 0.7,
                     "n": 1,
-                    "max_tokens": 3072,
+                    "max_tokens": 2000,
                     "top_p": 1.0,
-                    "stop": [f"\n{self.num_instructions_to_generate}", f"{self.num_instructions_to_generate}."],
+                    # "stop": [f"\n{self.num_instructions_to_generate}", f"{self.num_instructions_to_generate}."],
                 }
 
                 results = self.openai_completion(
