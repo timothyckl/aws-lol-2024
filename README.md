@@ -2,29 +2,29 @@
 
 # Leaderboard
 
-Last updated: February 28, 2024
+Last updated: March 18, 2024
 
-Top 6 Teams: `[Team46, Team0, Team51, team45, Team50, t45]`
+Top 6 Teams: `[Team22, team45, team_45, Team55, Team59, Team18]`
 
-|   Rank | Trainer Alias               | Best Win Rate   | Gap to First   | Last Submitted Win Rate   |   No. of Wins |   No. of Draws |   No. of Total Runs |
-|-------:|:----------------------------|:----------------|:---------------|:--------------------------|--------------:|---------------:|--------------------:|
-|      1 | Team46-puolsky-KristonKeoni | 77%             | 0%             | 62%                       |            30 |              0 |                  48 |
-|      2 | Team0-Vincent               | 72%             | 5%             | 66%                       |            32 |              0 |                  48 |
-|      3 | Team51                      | 72%             | 5%             | 72%                       |            35 |              0 |                  48 |
-|      4 | team45-mong                 | 72%             | 5%             | 66%                       |            32 |              0 |                  48 |
-|      5 | Team50-Justin               | 70%             | 7%             | 66%                       |            32 |              0 |                  48 |
-|      6 | t45-jemmyboi                | 70%             | 7%             | 58%                       |            28 |              0 |                  48 |
-|      7 | Team9-Eric                  | 70%             | 7%             | 70%                       |            34 |              0 |                  48 |
-|      8 | TM60-SNGTech                | 70%             | 7%             | 70%                       |            34 |              0 |                  48 |
-|      9 | Team4 - Akul                | 70%             | 7%             | 64%                       |            31 |              0 |                  48 |
-|     10 | Team4 - Wei Lun             | 70%             | 7%             | 70%                       |            34 |              0 |                  48 |
-|     11 | Team35_Holden               | 70%             | 7%             | 66%                       |            32 |              0 |                  48 |
-|     12 | TM-40-Junwei                | 70%             | 7%             | 70%                       |            34 |              0 |                  48 |
-|     13 | Team34-Mikhail              | 70%             | 7%             | 70%                       |            34 |              0 |                  48 |
-|     14 | team45-yh                   | 70%             | 7%             | 70%                       |            34 |              0 |                  48 |
-|     15 | Team18-CogniSync            | 70%             | 7%             | 66%                       |            32 |              0 |                  48 |
-|     16 | Team1-Damien                | 70%             | 7%             | 70%                       |            34 |              0 |                  48 |
-|     17 | Team0-ZhiHao                | 68%             | 9%             | 68%                       |            33 |              0 |                  48 |
-|     18 | Team26-Kyra                 | 68%             | 9%             | 68%                       |            33 |              0 |                  48 |
-|     19 | Team47-ZayYarTun            | 68%             | 9%             | 68%                       |            33 |              0 |                  48 |
-|     20 | T39_Jacob                   | 68%             | 9%             | 64%                       |            31 |              0 |                  48 |
+|   Rank | Trainer Alias      | Best Win Rate   | Gap to First   | Last Submitted Win Rate   |   No. of Wins |   No. of Draws |   No. of Total Runs |
+|-------:|:-------------------|:----------------|:---------------|:--------------------------|--------------:|---------------:|--------------------:|
+|      1 | Team22-Katherine   | 93%             | 0%             | 83%                       |            40 |              0 |                  48 |
+|      2 | team45-applejem    | 93%             | 0%             | 77%                       |            37 |              0 |                  48 |
+|      3 | team_45_jkt        | 93%             | 0%             | 87%                       |            42 |              0 |                  48 |
+|      4 | Team55-Darren      | 93%             | 0%             | 85%                       |            41 |              0 |                  48 |
+|      5 | Team59-John        | 93%             | 0%             | 81%                       |            39 |              0 |                  48 |
+|      6 | team45_yuheng      | 93%             | 0%             | 85%                       |            41 |              0 |                  48 |
+|      7 | team45-mingjun     | 93%             | 0%             | 89%                       |            43 |              0 |                  48 |
+|      8 | Team18-CogniSync   | 93%             | 0%             | 85%                       |            41 |              0 |                  48 |
+|      9 | Team50-Justin      | 91%             | 2%             | 75%                       |            36 |              0 |                  48 |
+|     10 | Team59-weithai     | 91%             | 2%             | 79%                       |            38 |              0 |                  48 |
+|     11 | Team8- xiao hong   | 91%             | 2%             | 83%                       |            40 |              0 |                  48 |
+|     12 | Team46-Keoni       | 91%             | 2%             | 75%                       |            36 |              0 |                  48 |
+|     13 | Team38-Nonsensical | 91%             | 2%             | 85%                       |            41 |              0 |                  48 |
+|     14 | Team8-Char         | 91%             | 2%             | 83%                       |            40 |              0 |                  48 |
+|     15 | team45_ethan       | 91%             | 2%             | 81%                       |            39 |              0 |                  48 |
+|     16 | team5-Almost5.0    | 91%             | 2%             | 79%                       |            38 |              0 |                  48 |
+|     17 | Team56-Varshan     | 91%             | 2%             | 79%                       |            38 |              0 |                  48 |
+|     18 | hehe               | 89%             | 4%             | 83%                       |            40 |              0 |                  48 |
+|     19 | Team20-Dooki       | 89%             | 4%             | 77%                       |            37 |              0 |                  48 |
+|     20 | Team8-Ming Qi      | 89%             | 4%             | 79%                       |            38 |              0 |                  48 |
