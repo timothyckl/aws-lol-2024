@@ -1,6 +1,13 @@
-# AWS LOL 2024
+## Getting Started
 
-# Leaderboard
+1. Install requirments:
+```
+pip install -r requirements.txt
+```
+
+2. Run `self-instruct.ipynb` in `notebooks/`
+
+##  Leaderboard
 
 Last updated: March 18, 2024
 
